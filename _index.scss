@@ -1,0 +1,25 @@
+@forward './src/assets/core/theming' as theme-*;
+@forward './src/assets/core/constants' as const-*;
+
+@use './src/assets/fonts/fonts' as fonts;
+@use './src/assets/core/base' as base;
+
+
+// $primary: #9b59b6 !default;
+// $secondary: #3498db !default;
+// $warn: #e67e22 !default;
+// $danger: #e74c3c !default;
+// $dark: #121212 !default;
+// $light: #ffffff !default;
+
+// @include theming.configure-theme((primary: $primary,
+//     secondary: $secondary,
+//     warn: $warn,
+//     danger: $danger,
+//     dark: $dark,
+//     light: $light));
+
+@mixin core {
+  @include fonts.core();
+  @include base.core();
+}

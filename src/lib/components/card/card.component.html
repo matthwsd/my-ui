@@ -1,0 +1,13 @@
+<div class="ui-card__container" [ngClass]="getTheming('container')">
+  <div class="ui-card__title">
+    <ng-content select="[title]"></ng-content>
+  </div>
+  <div class="ui-card__description">
+    <ng-content select="[description]"></ng-content>
+  </div>
+  <div class="ui-card__content">
+    <ng-container *ngIf="templateToRender">
+      <ng-container [ngTemplateOutlet]="templateToRender.template"></ng-container>
+    </ng-container>
+  </div>
+</div>

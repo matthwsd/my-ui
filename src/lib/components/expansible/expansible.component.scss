@@ -1,0 +1,62 @@
+@use '../../../../index' as core;
+
+.ui-expansible {
+
+  @include core.theme-create-container {
+    width: 100%;
+    height: auto;
+    transition: all 0.2s ease;
+    border: 1px solid var(--color-light);  
+  }
+
+  @include core.theme-create-variations("container", "border-color", "inverted-color") using ($style, $color, $code) {
+    .ui-expansible__header {
+      background: var(--color-#{$color});
+    }
+
+    .ui-expansible__content {
+      color: var(--color-#{$color});
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: core.$const-base-component-height;
+    padding: core.$const-base-component-padding;
+    color: var(--color-dark);
+    background: var(--color-light);
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+    font-family: var(--font-semibold);
+  }
+
+  &__description {
+    display: block;
+    width: 100%;
+    font-family: var(--font-normal);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  &__content {
+    display: flex;
+    width: 100%;
+    height: auto;
+    color: var(--color-light);
+    font-family: var(--font-normal);
+    outline: none !important;
+    background: none;
+    padding: core.$const-base-component-padding;
+    font-size: core.$const-base-component-font-size;
+  }
+
+}

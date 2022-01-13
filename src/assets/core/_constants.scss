@@ -1,0 +1,13 @@
+$base-component-border-radius: 4px;
+$base-component-padding: 8px;
+$base-component-height: 42px;
+$base-component-font-size: 18px;
+$base-component-title-size: 18px;
+$base-component-description-size: 14px;
+$base-component-container-margin-bottom: 4px;
+$base-coponents-variations: (primary: --color-primary,
+  secondary: --color-secondary,
+  warn: --color-warn,
+  danger: --color-danger,
+  dark: --color-dark,
+  light: --color-light);

@@ -1,0 +1,32 @@
+@font-face {
+  font-family: fira;
+  src: url(./FiraCode-Regular.ttf);
+}
+
+@font-face {
+  font-family: fira-medium;
+  src: url(./FiraCode-Regular.ttf);
+}
+
+@font-face {
+  font-family: fira-light;
+  src: url(./FiraCode-Light.ttf);
+}
+
+@font-face {
+  font-family: fira-semibold;
+  src: url(./FiraCode-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: fira-bold;
+  src: url(./FiraCode-Bold.ttf);
+}
+
+$weights: (
+  normal: fira,
+  medium: fira-medium,
+  light: fira-light,
+  semibold: fira-semibold,
+  bold: fira-bold,
+);

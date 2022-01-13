@@ -1,0 +1,15 @@
+@use './fira/fira' as fira;
+
+@mixin core($weights: null) {
+
+  @if($weights==null) {
+    $weights: fira.$weights;
+  }
+
+  :root {
+    @each $weight,
+    $font in $weights {
+      --font-#{$weight}: #{$font};
+    }
+  }
+}

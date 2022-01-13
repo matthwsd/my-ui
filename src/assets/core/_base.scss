@@ -1,0 +1,20 @@
+@mixin core() {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: var(--color-dark);
+    color: var(--color-light);
+
+    &.my-ui__light-theme {
+      background: var(--color-light);
+      color: var(--color-dark);
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+}

@@ -1,0 +1,97 @@
+@use "sass:map";
+@use './constants'as const;
+
+$primary: #9b59b6 !default;
+$secondary: #3498db !default;
+$warn: #e67e22 !default;
+$danger: #e74c3c !default;
+$dark: #222222 !default;
+$light: #ffffff !default;
+
+$colors: (primary: $primary,
+  secondary: $secondary,
+  warn: $warn,
+  danger: $danger,
+  dark: $dark,
+  light: $light);
+
+@mixin core() {
+  :root {
+
+    @each $color,
+    $code in $colors {
+      --color-#{$color}: #{$code};
+    }
+  }
+}
+
+@mixin configure($newColors: null) {
+  @if $newColors {
+    $colors: map.merge($colors, $newColors) !global;
+  }
+
+  @include core();
+}
+
+@mixin text-contrast($color) {
+  $color-brightness: round(calc((red($color) * 299) + (green($color) * 587) + (blue($color) * 114) / 1000));
+  $light-color: round(calc((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000));
+
+  @if abs($color-brightness) < (calc($light-color/2)) {
+    color: var(--color-light);
+  }
+
+  @else {
+    color: var(--color-dark);
+  }
+}
+
+@mixin create-container {
+  &__container {
+    margin-bottom: const.$base-component-container-margin-bottom;
+    border-radius: const.$base-component-border-radius;
+    @content;
+  }
+}
+
+
+@mixin create-variations($element, $properties...) {
+
+  @each $color,
+  $code in $colors {
+    &__#{$element}-fill--#{$color} {
+      background: var(--color-#{$color});
+      @include text-contrast($code);
+
+      @each $property in $properties {
+        @if $property !=color {
+          #{$property}: var(--color-#{$color});
+        }
+      }
+
+      @content("fill", $color, $code);
+    }
+
+    &__#{$element}-outline--#{$color} {
+      background: none;
+
+      @each $property in $properties {
+        @if $property==inverted-color {
+          @if $color==light {
+            color: var(--color-dark);
+          }
+
+          @else if $color==dark {
+            color: var(--color-light);
+          }
+        }
+
+        @else {
+          #{$property}: var(--color-#{$color});
+        }
+      }
+
+      @content("outline", $color, $code);
+    }
+  }
+}

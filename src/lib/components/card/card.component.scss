@@ -1,0 +1,40 @@
+@use '../../../assets/core/constants'as const;
+@use '../../../assets/core/theming'as theme;
+
+.ui-card {
+
+  @include theme.create-container() {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    padding: const.$base-component-padding;
+    border: 1px solid var(--color-light);
+    border-radius: const.$base-component-border-radius;
+  }
+
+  @include theme.create-variations("container", "border-color", "color");
+
+  &__title {
+    display: block;
+    width: 100%;
+    font-family: var(--font-semibold);
+    font-size: const.$base-component-title-size;
+  }
+
+  &__description {
+    display: block;
+    width: 100%;
+    font-family: var(--font-normal);
+    font-size: const.$base-component-description-size;
+    margin-top: 4px;
+  }
+
+  &__content {
+    display: block;
+    width: auto;
+    height: auto;
+    margin-top: 8px;
+    font-family: var(--font-normal);
+  }
+
+}

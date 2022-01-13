@@ -1,0 +1,15 @@
+<div class="ui-expansible__container" [ngClass]="getTheming('container')">
+  <div class="ui-expansible__header" (click)="changeState()">
+    <div class="ui-expansible__title">
+      <ng-content select="[title]"></ng-content>
+    </div>
+    <div class="ui-expansible__description">
+      <ng-content select="[description]"></ng-content>
+    </div>
+  </div>
+  <div class="ui-expansible__content" [@collapse]="isOpen ? 'open' : 'close'">
+    <ng-container *ngIf="templateToRender">
+      <ng-container [ngTemplateOutlet]="templateToRender.template"></ng-container>
+    </ng-container>
+  </div>
+</div>
