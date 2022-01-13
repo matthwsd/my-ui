@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ExpansibleComponent } from './components/expansible/expansible.component';
 import { GetTemplateDirective } from './directives/get-template.directive';
 import { CardComponent } from './components/card/card.component';
-
+//Testinho
 @NgModule({
   declarations: [
     MyUiComponent,
