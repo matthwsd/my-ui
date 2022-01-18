@@ -1,5 +1,10 @@
 <div class="ui-button__container">
   <button class="ui-button__button" [ngClass]="getTheming('button')">
-    <ng-content></ng-content>
+    <my-ui-icon *ngIf="icon && iconPosition == 'start'" [icon]="icon"></my-ui-icon>
+    <div class="ui-button__label" [class.ui-button__label--right]="icon && iconPosition == 'end'"
+      [class.ui-button__label--left]="icon && iconPosition == 'start'">
+      <ng-content></ng-content>
+    </div>
+    <my-ui-icon *ngIf="icon && iconPosition == 'end'" [icon]="icon"></my-ui-icon>
   </button>
 </div>

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ExpansibleComponent } from './components/expansible/expansible.component';
 import { GetTemplateDirective } from './directives/get-template.directive';
 import { CardComponent } from './components/card/card.component';
+import { IconComponent } from './components/icon/icon.component';
 //Testinho
 @NgModule({
   declarations: [
@@ -14,9 +15,10 @@ import { CardComponent } from './components/card/card.component';
     ButtonComponent,
     ExpansibleComponent,
     GetTemplateDirective,
-    CardComponent
+    CardComponent,
+    IconComponent
   ],
-  imports: [ 
+  imports: [
     CommonModule
   ],
   exports: [
@@ -25,7 +27,8 @@ import { CardComponent } from './components/card/card.component';
     ButtonComponent,
     ExpansibleComponent,
     GetTemplateDirective,
-    CardComponent
+    CardComponent,
+    IconComponent
   ]
 })
 export class MyUiModule { }

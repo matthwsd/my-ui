@@ -1,4 +1,4 @@
-import { Directive, Input } from "@angular/core";
+import { Attribute, Directive, ElementRef, Inject, Input, Optional } from "@angular/core";
 
 export type ThemingVariations = "primary" | "secondary" | "danger" | "warn" | "light" | "dark";
 export type ThemingAppearence = "fill" | "outline";
@@ -14,6 +14,7 @@ export abstract class Theming {
     readonly APPEARENCES: ThemingAppearence[] = ["fill", "outline"];
 
     constructor(private readonly baseClass: string) {
+
     }
 
 

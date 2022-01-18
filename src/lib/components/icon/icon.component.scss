@@ -1,0 +1,19 @@
+@use '../../../../index'as core;
+
+
+.ui-icon {
+
+  &__container {
+    display: inline-flex;
+    align-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__viewbox {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-light);
+    margin-bottom: -2px;
+  }
+}

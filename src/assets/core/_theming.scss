@@ -46,12 +46,39 @@ $colors: (primary: $primary,
   }
 }
 
-@mixin create-container {
+@mixin create-container() {
   &__container {
-    margin-bottom: const.$base-component-container-margin-bottom;
-    border-radius: const.$base-component-border-radius;
+    display: inline-flex;
+    vertical-align: bottom;
+    flex-wrap: wrap;
     @content;
   }
+}
+
+@mixin create-nest-variations($element) {
+  [uisuffix] &__#{$element} {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-left: none !important;
+    background: pink;
+  }
+
+  [uiprefix] &__#{$element} {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: none !important;
+    background: pink;
+  }
+}
+
+@mixin create-border {
+  border-top-right-radius: const.$base-component-border-radius;
+  border-top-left-radius: const.$base-component-border-radius;
+  border-bottom-right-radius: const.$base-component-border-radius;
+  border-bottom-left-radius: const.$base-component-border-radius;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-light);
 }
 
 

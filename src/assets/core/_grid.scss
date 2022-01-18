@@ -1,0 +1,29 @@
+@mixin core() {
+
+  .ui-grid {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin-right: -6px;
+    margin-left: -6px;
+
+    &:after {
+      display: flex;
+      clear: right;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .ui-col-#{$i} {
+      display: flex;
+      // justify-content: center;
+      flex-basis: percentage($i / 12);
+      padding-left: 6px;
+      padding-right: 6px;
+      flex-flow: column;
+    }
+  }
+
+}

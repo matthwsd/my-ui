@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0"
+    "@angular/core": "^13.1.0",
+    "@mdi/svg": "^6.5.95",
+    "@mdi/js": "^6.5.95"
   },
   "dependencies": {
     "@angular/platform-browser": "^13.1.2",

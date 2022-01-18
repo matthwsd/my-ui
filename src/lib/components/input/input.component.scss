@@ -1,4 +1,4 @@
-@use '../../../../index' as core;
+@use '../../../../index'as core;
 
 .ui-input {
 
@@ -11,9 +11,8 @@
     color: var(--color-light);
     font-family: var(--font-semibold);
     outline: none !important;
-    border: 1px solid var(--color-light);
+    @include core.theme-create-border;
     background: none;
-    border-radius: core.$const-base-component-border-radius;
     padding: core.$const-base-component-padding;
     font-size: core.$const-base-component-font-size;
 
@@ -25,17 +24,19 @@
 
   @include core.theme-create-variations("input", "color", "border-color") using($style, $color, $code) {
     &::placeholder {
-      @if $style == fill {        
-       @include core.theme-text-contrast($code);    
-      } @else {
-        color: var(--color-#{$color});      
+      @if $style==fill {
+        @include core.theme-text-contrast($code);
+      }
+
+      @else {
+        color: var(--color-#{$color});
       }
     }
   }
 
   &__label {
     display: block;
-    width: auto;
+    width: 100%;
     font-family: var(--font-semibold);
   }
 

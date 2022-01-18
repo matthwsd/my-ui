@@ -1,4 +1,5 @@
 <div class="ui-input__container">
   <div class="ui-input__label">{{label}}</div>
-  <input [type]="type" class="ui-input__input" [ngClass]="getTheming('input')" [placeholder]="placeholder">
+  <input [type]="type" class="ui-input__input" [ngClass]="getTheming('input')" [placeholder]="placeholder"
+    (input)="onInput($event.target)" [disabled]="Disabled" [value]="InputValue">
 </div>

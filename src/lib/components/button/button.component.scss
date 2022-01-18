@@ -1,24 +1,38 @@
-@use '../../../assets/core/constants'as const;
-@use '../../../assets/core/theming'as theme;
+@use '../../../../index'as core;
 
 .ui-button {
 
-  @include theme.create-container;
+  @include core.theme-create-container;
 
   &__button {
-    display: block;
-    width: fit-content;
-    min-height: const.$base-component-height;
+    display: inline-flex;
+    width: auto;
+    height: core.$const-base-component-height;
     font-family: var(--font-semibold);
     outline: none !important;
     cursor: pointer;
-    border: 1px solid var(--color-light);
-    border-radius: const.$base-component-border-radius;
-    padding: const.$base-component-padding;
-    font-size: const.$base-component-font-size;
+    @include core.theme-create-border;
+    padding: core.$const-base-component-padding;
+    font-size: core.$const-base-component-font-size;
+    justify-items: center;
   }
 
-  @include theme.create-variations("button", "color", "border-color");
+  &__label {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    vertical-align: center;
 
+    &--left {
+      margin-left: 4px;
+    }
+
+    &--right {
+      margin-right: 4px;
+    }
+  }
+
+  @include core.theme-create-variations("button", "color", "border-color");
+  @include core.theme-create-nest-variations("button");
 
 }

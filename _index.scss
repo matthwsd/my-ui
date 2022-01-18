@@ -3,6 +3,7 @@
 
 @use './src/assets/fonts/fonts' as fonts;
 @use './src/assets/core/base' as base;
+@use './src/assets/core/grid' as grid;
 
 
 // $primary: #9b59b6 !default;
@@ -22,4 +23,5 @@
 @mixin core {
   @include fonts.core();
   @include base.core();
+  @include grid.core();
 }

@@ -1,0 +1,25 @@
+$-extra-large-breakpoint: 1200px;
+$-large-breakpoint: 992px;
+$-medium-breakpoint: 768px;
+$-small-breakpoint: 576px;
+$-threshold: 0.2px;
+
+
+$breakpoint: (
+    sm: $-small-breakpoint,
+    md: $-medium-breakpoint,
+    lg: $-large-breakpoint,
+    xl: $-extra-large-breakpoint
+);
+
+@function -reduce($breakpoint) {
+    @return calc($breakpoint - $-threshold);
+}
+
+
+// @mixin create-variation($breakpoint){
+//     @content{}
+// }
+
+
+
